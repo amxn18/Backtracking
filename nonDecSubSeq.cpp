@@ -31,24 +31,22 @@ class Solution {
             return result;
         }
     };
-    // # Problem: Given an array nums, find all possible increasing subsequences of length >= 2.
-
-    // # Approach:
-    // # 1. Use Backtracking to explore all possible subsequences.
-    // # 2. Maintain a temporary vector `curr` to store the current subsequence.
-    // # 3. Use a set `st` to avoid duplicate numbers at the same recursion level.
-    // # 4. If `curr` has 2 or more elements, add it to the result.
-    // # 5. Traverse the array, ensuring elements are non-decreasing.
-    // # 6. If the current number hasn't been used at this level, add it to `curr`, recurse, then backtrack.
-    // # 7. Time Complexity: O(2^N) in the worst case, but pruning optimizes it.
-    
-    // # Key Observations:
-    // # - Use `st` to avoid duplicate elements at the same recursion level.
-    // # - Backtracking ensures all valid subsequences are explored.
-    // # - We pass `i+1` in recursion to ensure elements appear in order.
+//     # Problem: Find all increasing subsequences of length >= 2 from nums[]
+// # Approach: Backtracking + HashSet to avoid duplicate selections in one recursion level
+// # 
+// # 1. Start from index 0, and try adding elements to the current sequence
+// # 2. Ensure elements are in non-decreasing order
+// # 3. Use a hash set to avoid choosing the same element twice in one recursion level
+// # 4. If a valid subsequence is formed (size >= 2), store it in result
+// # 5. Use backtracking:
+// #     - Add element to the sequence
+// #     - Explore further with recursion
+// #     - Remove the element (pop_back) to try other possibilities
+// # 6. Return all possible valid subsequences
+// #
+// # Complexity: Exponential O(2^N), as we explore all subsets
     
     // # Example:
     // # Input: [4,6,7,7]
     // # Output: [[4,6], [4,6,7], [4,6,7,7], [4,7], [4,7,7], [6,7], [6,7,7], [7,7]]
-        
     
